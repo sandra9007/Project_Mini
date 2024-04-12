@@ -43,13 +43,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh; /* Set minimum height to 100% of the viewport height */
     }
 
     .signup-form {
       width: 400px;
       padding: 30px;
-      background-color: #f1f7fd;;
+      background-color: #f1f7fd;
       border-radius: 10px;
       box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     }
@@ -61,7 +61,9 @@
 
     .signup-form input[type="text"],
     .signup-form input[type="email"],
-    .signup-form input[type="password"] {
+    .signup-form input[type="password"],
+    .signup-form input[type="date"],
+    .signup-form select {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -87,7 +89,8 @@
     .error-message {
       color: red;
     }
-  </style>
+</style>
+
 </head>
 
 <body>
@@ -161,6 +164,26 @@
             <h2>Create your account</h2>
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" required><br>
+            <label for="Last Name">Last name:</label><br>
+            <input type="text" id="Last Name" name="Last Name" required><br>
+            <br>
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select><br>
+            <label for="birthdate">Birth Date:</label><br>
+            <input type="date" id="birthdate" name="birthdate" required><br>
+            <label for="city">City:</label><br>
+            <select id="city" name="city" required>
+              <option value="">Select City</option>
+              <option value="New York">New York</option>
+              <option value="Los Angeles">Los Angeles</option>
+              <option value="Chicago">Chicago</option>
+              <option value="Houston">Houston</option>
+              <!-- Add more options as needed -->
+            </select><br>
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br>
             <label for="password">Password:</label><br>
