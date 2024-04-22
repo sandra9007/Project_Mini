@@ -113,10 +113,10 @@
                       <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Add Vaccine</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Report</a>
+                      <a class="nav-link" data-bs-toggle="tab" href="#tab-3">View Vaccine</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Pediatrics</a>
+                      <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Report</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Eye Care</a>
@@ -159,7 +159,54 @@
                       </div>
                     </div>
                     <div class="tab-pane" id="tab-3">
-                      <!-- Report tab content -->
+                      
+                      <!-- ======= Admin View - Child Details ======= -->
+<section class="admin-view">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6">
+              <h2>Children List</h2>
+              <ul id="children-list">
+                  <li><a href="#" onclick="showVaccineDetails(1)">John Doe</a></li>
+                  <li><a href="#" onclick="showVaccineDetails(2)">Jane Smith</a></li>
+                  <!-- Add more child names as needed -->
+              </ul>
+          </div>
+          <div class="col-lg-6">
+              <div id="vaccine-details">
+                  <!-- Vaccine details will be displayed here -->
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script>
+  function showVaccineDetails(childId) {
+      // Dummy data for demonstration purposes
+      const vaccines = {
+          1: { name: "Vaccine 1", time: "10:00 AM", slot: "A1", phone: "+1 234 567 8901" },
+          2: { name: "Vaccine 2", time: "11:00 AM", slot: "B2", phone: "+1 234 567 8902" }
+          // Add more vaccine details as needed
+      };
+
+      const child = vaccines[childId];
+      if (child) {
+          const vaccineDetails = `
+              <h3>${child.name}</h3>
+              <p><strong>Time:</strong> ${child.time}</p>
+              <p><strong>Slot:</strong> ${child.slot}</p>
+              <p><strong>Phone:</strong> ${child.phone}</p>
+          `;
+          document.getElementById('vaccine-details').innerHTML = vaccineDetails;
+      } else {
+          document.getElementById('vaccine-details').innerHTML = "<p>No vaccine details found for this child.</p>";
+      }
+  }
+</script>
+
+                    
+                    
                     </div>
                     <div class="tab-pane" id="tab-4">
                       <!-- Pediatrics tab content -->
@@ -230,6 +277,9 @@
       }
     }
   </script>
+  
+  
+  
 
 </body>
 

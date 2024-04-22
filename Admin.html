@@ -176,9 +176,43 @@
                     <div class="tab-pane" id="tab-3">
                       <div class="row gy-4">
                         <div class="col-lg-8 details order-2 order-lg-1">
-                          <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
-                          <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                          <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                          <div class="tab-pane" id="tab-3">
+    <div id="vaccine-details">
+        <h3>View Vaccine</h3>
+        <p id="child-name"></p>
+        <p id="vaccine-name"></p>
+        <p id="slot"></p>
+        <p id="time"></p>
+        <p id="parent-phone"></p>
+    </div>
+</div>
+
+<script>
+    function viewVaccines(childName) {
+        const vaccines = {
+            'John Doe': [
+                { vaccineName: 'Vaccine 1', slot: 'Slot 1', time: '10:00 AM', parentPhone: '+1 234 567 8901' },
+                { vaccineName: 'Vaccine 2', slot: 'Slot 2', time: '11:00 AM', parentPhone: '+1 234 567 8901' }
+            ],
+            'Jane Doe': [
+                { vaccineName: 'Vaccine 1', slot: 'Slot 3', time: '12:00 PM', parentPhone: '+1 234 567 8901' },
+                { vaccineName: 'Vaccine 2', slot: 'Slot 4', time: '1:00 PM', parentPhone: '+1 234 567 8901' }
+            ]
+            // Add more child vaccine details as needed
+        };
+
+        const childVaccines = vaccines[childName];
+        if (childVaccines) {
+            const firstVaccine = childVaccines[0]; // Assuming we display the first vaccine
+            document.getElementById('child-name').innerText = `Child Name: ${childName}`;
+            document.getElementById('vaccine-name').innerText = `Vaccine Name: ${firstVaccine.vaccineName}`;
+            document.getElementById('slot').innerText = `Slot: ${firstVaccine.slot}`;
+            document.getElementById('time').innerText = `Time: ${firstVaccine.time}`;
+            document.getElementById('parent-phone').innerText = `Parent Phone: ${firstVaccine.parentPhone}`;
+        }
+    }
+</script>
+
                         </div>
                         <div class="col-lg-4 text-center order-1 order-lg-2">
                           <img src="assets/img/departments-3.jpg" alt="" class="img-fluid">
@@ -188,9 +222,29 @@
                     <div class="tab-pane" id="tab-4">
                       <div class="row gy-4">
                         <div class="col-lg-8 details order-2 order-lg-1">
-                          <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
-                          <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                          <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                          <div class="tab-pane" id="tab-3">
+                            <div class="row gy-4">
+                                <div class="col-lg-8 details order-2 order-lg-1">
+                                    <h3>Vaccine Requests</h3>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Child Name</th>
+                                                <th>Vaccine Name</th>
+                                                <th>Slot</th>
+                                                <th>Time</th>
+                                                <th>Parent Phone Number</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="vaccine-requests">
+                                            <!-- Data will be populated here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                          
                         </div>
                         <div class="col-lg-4 text-center order-1 order-lg-2">
                           <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">

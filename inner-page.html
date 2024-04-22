@@ -118,7 +118,56 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          Example inner page template
+          <div class="row gy-4">
+            <div class="col-lg-3">
+              <ul class="nav nav-tabs flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1"> Child Details</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Add Vaccine</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-3">View Vaccine</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Report</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Eye Care</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-9">
+              <div class="tab-content">
+                <div class="tab-pane active show" id="tab-1">
+                  <div class="row gy-4">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Child Details</h3>
+                      <ul id="child-list">
+                        <li><a href="#" onclick="showVaccineDetails('Vaccine 1', '09:00 AM - 09:30 AM')">Vaccine 1</a></li>
+                        <li><a href="#" onclick="showVaccineDetails('Vaccine 2', '10:00 AM - 10:30 AM')">Vaccine 2</a></li>
+                        <!-- Add more vaccine names and time slots as needed -->
+                      </ul>
+                      <div id="vaccine-details"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            function showVaccineDetails(vaccineName, timeSlot) {
+              const detailsDiv = document.getElementById("vaccine-details");
+              detailsDiv.innerHTML = `
+                <h3>Vaccine Details</h3>
+                <p><strong>Vaccine Name:</strong> ${vaccineName}</p>
+                <p><strong>Time Slot Requested:</strong> ${timeSlot}</p>
+              `;
+            }
+          </script>
+          
         </p>
       </div>
     </section>
