@@ -49,6 +49,15 @@
       justify-content: center;
        /* Adjust the height as needed */
     }
+    /* Styling for the Submit button */
+    #submit-button {
+      background-color: blue;
+      color: white;
+    }
+    /* Style for selected time slot button */
+    .selected-time {
+      background-color: lightblue; /* Change the background color as desired */
+    }
   </style>
 </head>
 
@@ -87,24 +96,73 @@
       </div>
       <div class="container">
         <div class="slot-box">
-          <button class="wide-button">9.00 AM - 10.00 AM</button>
-          <button class="wide-button">10.15 AM - 11.15 AM</button>
-          <button class="wide-button">11.30 AM - 12.30 AM</button>
-          <button class="wide-button">1.00 PM - 2.00 PM</button>
-          <button class="wide-button">2.15 PM - 3.15 PM</button>
-          <button class="wide-button">3.30 PM - 4.30 PM</button>
+          <button id="slot1" class="wide-button" onclick="selectTime('9.00 AM - 10.00 AM', 'slot1')">9.00 AM - 10.00 AM</button>
+          <button id="slot2" class="wide-button" onclick="selectTime('10.15 AM - 11.15 AM', 'slot2')">10.15 AM - 11.15 AM</button>
+          <button id="slot3" class="wide-button" onclick="selectTime('11.30 AM - 12.30 AM', 'slot3')">11.30 AM - 12.30 AM</button>
+          <button id="slot4" class="wide-button" onclick="selectTime('1.00 PM - 2.00 PM', 'slot4')">1.00 PM - 2.00 PM</button>
+          <button id="slot5" class="wide-button" onclick="selectTime('2.15 PM - 3.15 PM', 'slot5')">2.15 PM - 3.15 PM</button>
+          <button id="slot6" class="wide-button" onclick="selectTime('3.30 PM - 4.30 PM', 'slot6')">3.30 PM - 4.30 PM</button>
+          <form id="appointment-form">
+            <!-- Apply ID to the Submit button for specific styling -->
+            <button id="submit-button" type="submit" class="wide-button">Submit</button>
+          </form>
+          
         </div>
       </div>
     </section>
     
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
+<!-- ======= Footer ======= -->
+<footer id="footer">
     <!-- Footer content goes here -->
   </footer><!-- End Footer -->
 
   <!-- Other scripts and stylesheets -->
+
+  <!-- Add jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Add SweetAlert2 library for popup messages -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    let selectedTime = ''; // Variable to store selected time
+
+    // Function to set the selected time
+    function selectTime(time, buttonId) {
+      // Remove the 'selected-time' class from all buttons
+      $('.wide-button').removeClass('selected-time');
+
+      // Add the 'selected-time' class to the clicked button
+      $('#' + buttonId).addClass('selected-time');
+
+      selectedTime = time;
+    }
+
+    // When the form is submitted
+    $('#appointment-form').submit(function(e) {
+      e.preventDefault(); // Prevent the default form submission
+
+      // If a time slot is selected
+      if (selectedTime !== '') {
+        // Show a popup message
+        Swal.fire({
+          title: 'Appointment Taken Successfully',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
+      } else {
+        // If no time slot is selected, show an error message
+        Swal.fire({
+          title: 'Please Select a Time Slot First',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
+  </script>
 
 </body>
 
