@@ -88,6 +88,33 @@
     .error-message {
       color: red;
     }
+    
+    <style>
+        .notification-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .notification-item {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .notification-item.accepted {
+            background-color: #d4edda; /* Bootstrap's success color */
+        }
+
+        .notification-item.rejected {
+            background-color: #f8d7da; /* Bootstrap's danger color */
+        }
+
+        .notification-item:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+    
 </style>
 
 </head>
@@ -215,6 +242,29 @@
                     </div>
                   </div>
                   <div class="tab-pane" id="tab-3">
+                    <div class="row gy-4">
+                      <div class="col-lg-8 details order-2 order-lg-1">
+                        <h3>Notification</h3>
+
+                        <div class="container">
+                          <ul class="notification-list">
+                              <!-- Accepted Notification Item -->
+                              <li class="notification-item accepted">
+                                  <strong>Appointment Accepted</strong><br>
+                                  Your appointment for <strong>9.00 AM - 10.00 AM</strong> has been accepted.
+                              </li>
+                              <!-- Rejected Notification Item -->
+                              <li class="notification-item rejected">
+                                  <strong>Appointment Rejected</strong><br>
+                                  Your appointment for <strong>10.15 AM - 11.15 AM</strong> has been rejected.
+                              </li>
+                              <!-- Add more notification items here -->
+                          </ul>
+                      </div>
+
+
+                        </div>
+                        </div>
                     <!-- Notification tab content -->
                   </div>
                 </div>
