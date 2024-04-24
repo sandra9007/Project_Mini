@@ -135,13 +135,16 @@
               <div class="col-lg-3">
                 <ul class="nav nav-tabs flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1" onclick="toggleChildDetails()"> Child Details</a>
+                    <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1" onclick="toggleChildDetails()">Add Child Details</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Add Vaccine</a>
+                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Vaccine</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Notification</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#tab-3">View Child</a>
                   </li>
                 </ul>
               </div>
@@ -150,41 +153,42 @@
                   <div class="tab-pane active show" id="tab-1">
                     <div class="row gy-4">
                       <div class="col-lg-8 details order-2 order-lg-1">
-                        <h3>Child Details</h3>
+                        <h3></h3>
                         <div id="child-details" class="signup-form-container">
-                          <form class="signup-form" action="#" method="POST" onsubmit="return validatePassword()">
-                            <h2> Child Details</h2>
+                          <form class="signup-form" action="vaccinerecord.html" method="POST" onsubmit="return validatePassword()">
+                            <h2>Add Child Details</h2>
                             <label for="child-full-name">Child's Full Name:</label><br>
-                            <input type="text" id="child-full-name" name="child-full-name" required><br>
-
-                            <label>Child Gender:</label><br>
-                            <input type="radio" id="male" name="child-gender" value="male">
-                            <label for="male">Male</label>
-                            <input type="radio" id="female" name="child-gender" value="female">
-                            <label for="female">Female</label>
-                            <br>
-
-                            <label for="child-city">Child City:</label><br>
-                            <select id="child-city" name="child-city" required>
-                              <option value="">Choose..</option>
-                              <option value="New York">New York</option>
-                              <option value="Los Angeles">Los Angeles</option>
-                              <option value="Chicago">Chicago</option>
-                              <option value="Houston">Houston</option>
-                            </select><br>
-
-                            <label for="child-birthdate">Child Birth Date:</label><br>
-                            <input type="date" id="child-birthdate" name="child-birthdate" required><br>
-                            <div id="child-details">
-                              <label for="child-age">Child Age:</label>
-                              <input type="text" id="child-age" name="child-age" required placeholder="Age">
-                              <label for="child-weight">Child Weight:</label>
-                              <input type="text" id="child-weight" name="child-weight" required placeholder="Weight">
-                              <label for="child-height">Child Height:</label>
-                              <input type="text" id="child-height" name="child-height" required placeholder="Height">
-                            </div><br>
-                            <input type="submit" value="Next">
-                            <br><br>
+                <input type="text" id="child-full-name" name="child-full-name" required><br>
+                
+                <label>Child Gender:</label><br>
+                <input type="radio" id="male" name="child-gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="child-gender" value="female">
+                <label for="female">Female</label>
+                <br>
+                
+                <label for="child-city">Child City:</label><br>
+                <select id="child-city" name="child-city" required>
+                  <option value="">Choose..</option>
+                  <option value="New York">New York</option>
+                  <option value="Los Angeles">Los Angeles</option>
+                  <option value="Chicago">Chicago</option>
+                  <option value="Houston">Houston</option>
+                </select><br>
+                
+                <label for="child-birthdate">Child Birth Date:</label><br>
+                <input type="date" id="child-birthdate" name="child-birthdate" required><br>
+                <div id="child-details">
+                  <label for="child-age">Child Age:</label>
+                  <input type="text" id="child-age" name="child-age" required placeholder="Age">
+                  <label for="child-weight">Child Weight:</label>
+                  <input type="text" id="child-weight" name="child-weight" required placeholder="Weight">
+                  <label for="child-height">Child Height:</label>
+                  <input type="text" id="child-height" name="child-height" required placeholder="Height">
+                </div><br>
+                <input type="submit" value="Next">
+                <br><br>
+                            
                           </form>
                         </div>
                       </div>
