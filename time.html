@@ -129,22 +129,22 @@
   <!-- Custom JavaScript -->
   <script>
     let selectedTime = ''; // Variable to store selected time
-
+  
     // Function to set the selected time
     function selectTime(time, buttonId) {
       // Remove the 'selected-time' class from all buttons
       $('.wide-button').removeClass('selected-time');
-
+  
       // Add the 'selected-time' class to the clicked button
       $('#' + buttonId).addClass('selected-time');
-
+  
       selectedTime = time;
     }
-
+  
     // When the form is submitted
     $('#appointment-form').submit(function(e) {
       e.preventDefault(); // Prevent the default form submission
-
+  
       // If a time slot is selected
       if (selectedTime !== '') {
         // Show a popup message
@@ -152,6 +152,11 @@
           title: 'Appointment Taken Successfully',
           icon: 'success',
           confirmButtonText: 'OK'
+        }).then((result) => {
+          // Redirect to notification.html after clicking "OK"
+          if (result.isConfirmed) {
+            window.location.href = 'user.html';
+          }
         });
       } else {
         // If no time slot is selected, show an error message
