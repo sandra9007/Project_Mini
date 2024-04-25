@@ -1,0 +1,28 @@
+<div id="child-details"></div>
+
+<script>
+    // Function to get URL parameters
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    // Function to show child details
+    function showChildDetails() {
+        var childName = getParameterByName('name');
+        if (childName) {
+            // Display child details
+            var detailsElement = document.getElementById('child-details');
+            detailsElement.innerHTML = '<h3>Child Details for ' + childName + '</h3>';
+            // Fetch and display additional details as needed
+        }
+    }
+
+    // Call the function on page load
+    showChildDetails();
+</script>
