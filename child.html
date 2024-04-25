@@ -1,28 +1,44 @@
-<div id="child-details"></div>
-
+<div class="col-lg-9">
+    <div class="tab-content">
+        <div class="tab-pane active show" id="tab-1">
+            <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Child Details</h3>
+                    <div id="child-details"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
-    // Function to get URL parameters
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    document.addEventListener('DOMContentLoaded', function () {
+        var selectedChild = localStorage.getItem('selectedChild');
+        var childDetails = getChildDetails(selectedChild);
+        displayChildDetails(childDetails);
+    });
+
+    function getChildDetails(name) {
+        // You can fetch child details from a database or an object/array
+        // For demonstration purposes, I'll return a static object
+        return {
+            name: name,
+            phoneNumber: '123-456-7890',
+            gender: 'Male',
+            birthday: 'January 1, 2010',
+            dateOfBirth: '2010-01-01',
+            email: 'example@example.com'
+        };
     }
 
-    // Function to show child details
-    function showChildDetails() {
-        var childName = getParameterByName('name');
-        if (childName) {
-            // Display child details
-            var detailsElement = document.getElementById('child-details');
-            detailsElement.innerHTML = '<h3>Child Details for ' + childName + '</h3>';
-            // Fetch and display additional details as needed
-        }
+    function displayChildDetails(details) {
+        var childDetailsElement = document.getElementById('child-details');
+        childDetailsElement.innerHTML = `
+            <p><strong>Name:</strong> ${details.name}</p>
+            <p><strong>Phone Number:</strong> ${details.phoneNumber}</p>
+            <p><strong>Gender:</strong> ${details.gender}</p>
+            <p><strong>Birthday:</strong> ${details.birthday}</p>
+            <p><strong>Date of Birth:</strong> ${details.dateOfBirth}</p>
+            <p><strong>Email:</strong> ${details.email}</p>
+        `;
     }
-
-    // Call the function on page load
-    showChildDetails();
 </script>
