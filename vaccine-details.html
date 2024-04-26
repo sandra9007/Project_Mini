@@ -1,0 +1,38 @@
+<section class="admin-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="vaccine-details">
+                    <!-- Vaccine details will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const childId = urlParams.get('id');
+
+        // Dummy data for demonstration purposes
+        const vaccines = {
+            1: { name: "John Doe", time: "10:00 AM", slot: "A1", phone: "+1 234 567 8901" },
+            2: { name: "Jane Smith", time: "11:00 AM", slot: "B2", phone: "+1 234 567 8902" }
+            // Add more vaccine details as needed
+        };
+
+        const child = vaccines[childId];
+        if (child) {
+            const vaccineDetails = `
+                <h3>${child.name}</h3>
+                <p><strong>Time:</strong> ${child.time}</p>
+                <p><strong>Slot:</strong> ${child.slot}</p>
+                <p><strong>Phone:</strong> ${child.phone}</p>
+            `;
+            document.getElementById('vaccine-details').innerHTML = vaccineDetails;
+        } else {
+            document.getElementById('vaccine-details').innerHTML = "<p>No vaccine details found for this child.</p>";
+        }
+    });
+</script>
