@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Inner Page - Medilab Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    /* Custom CSS for wider buttons */
+    .wide-button {
+      width: 190px; /* Adjust the width as needed */
+      margin-bottom: 9px; /* Add margin bottom for spacing */
+    }
+    .slot-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+       /* Adjust the height as needed */
+    }
+    /* Styling for the Submit button */
+    #submit-button {
+      background-color: blue;
+      color: white;
+    }
+    /* Style for selected time slot button */
+    .selected-time {
+      background-color: lightblue; /* Change the background color as desired */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Kiddo Shield</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html #about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.html #services">Vaccination Schedule</a></li>
+          <li><a class="nav-link scrollto" href="diseases.html">Vaccination preventable Diseases</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Log</span> Out</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    
+    <section class="inner-page">
+      <div class="section-title">
+        <br><br><br><br><br><h2>Select Time</h2>
+      </div>
+      <div class="container">
+        <div class="slot-box">
+          <button id="slot1" class="wide-button" onclick="selectTime('9.00 AM - 10.00 AM', 'slot1')">9.00 AM - 10.00 AM</button>
+          <button id="slot2" class="wide-button" onclick="selectTime('10.15 AM - 11.15 AM', 'slot2')">10.15 AM - 11.15 AM</button>
+          <button id="slot3" class="wide-button" onclick="selectTime('11.30 AM - 12.30 AM', 'slot3')">11.30 AM - 12.30 AM</button>
+          <button id="slot4" class="wide-button" onclick="selectTime('1.00 PM - 2.00 PM', 'slot4')">1.00 PM - 2.00 PM</button>
+          <button id="slot5" class="wide-button" onclick="selectTime('2.15 PM - 3.15 PM', 'slot5')">2.15 PM - 3.15 PM</button>
+          <button id="slot6" class="wide-button" onclick="selectTime('3.30 PM - 4.30 PM', 'slot6')">3.30 PM - 4.30 PM</button>
+          <form id="appointment-form">
+            <!-- Apply ID to the Submit button for specific styling -->
+            <button id="submit-button" type="submit" class="wide-button">Submit</button>
+          </form>
+          
+        </div>
+      </div>
+    </section>
+    
+  </main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <!-- Footer content goes here -->
+  </footer><!-- End Footer -->
+
+  <!-- Other scripts and stylesheets -->
+
+  <!-- Add jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Add SweetAlert2 library for popup messages -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    let selectedTime = ''; // Variable to store selected time
+  
+    // Function to set the selected time
+    function selectTime(time, buttonId) {
+      // Remove the 'selected-time' class from all buttons
+      $('.wide-button').removeClass('selected-time');
+  
+      // Add the 'selected-time' class to the clicked button
+      $('#' + buttonId).addClass('selected-time');
+  
+      selectedTime = time;
+    }
+  
+    // When the form is submitted
+    $('#appointment-form').submit(function(e) {
+      e.preventDefault(); // Prevent the default form submission
+  
+      // If a time slot is selected
+      if (selectedTime !== '') {
+        // Show a popup message
+        Swal.fire({
+          title: 'Appointment Taken Successfully',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          // Redirect to notification.html after clicking "OK"
+          if (result.isConfirmed) {
+            window.location.href = 'user.html';
+          }
+        });
+      } else {
+        // If no time slot is selected, show an error message
+        Swal.fire({
+          title: 'Please Select a Time Slot First',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
