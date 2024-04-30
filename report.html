@@ -44,10 +44,26 @@
     th {
       background-color: #f2f2f2;
     }
-
-    /* Add borders to each cell */
+    h2{
+      color: blue;
+      font-weight: 400;
+    }
+     .h6{
+      color: blue;
+     }
+     h4{
+      margin-left: 250px;
+      color: blue;
+     }
+    h3{
+      padding-left: 250px;
+      color: blue;
+    }
     table, th, td {
       border: 1px solid black;
+    }
+    table{
+      margin-top: 50px;
     }
   </style>
 </head>
@@ -56,11 +72,7 @@
 
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +1 5589 55488 55
-      </div>
+    
       <div class="d-none d-lg-flex social-links align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -75,15 +87,14 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">Kiddo Shield</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto " href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        
       </nav><!-- .navbar -->
 
     </div>
@@ -95,7 +106,7 @@
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Child Details Form</h2>
+          <h2>Report</h2>
           <a href="index.html">Back to Home</a>
         </div>
       </div>
@@ -108,20 +119,20 @@
             <div class="tab-pane active show" id="tab-1">
               <div class="row gy-4">
                 <div class="col-lg-8 details order-2 order-lg-1">
-                  <h3>Child Details</h3>
+                  <h3>Child Report</h3>
                   <form>
-                    <label for="name">Name:  </label>
-                    <input type="text" id="name" name="name" value="John Doe" disabled><br><br>
-                    <label for="phone">Phone Number:</label>
-                    <input type="text" id="phone" name="phone" value="123-456-7890" disabled><br><br>
-                    <label for="gender">Gender:</label>
-                    <input type="text" id="gender" name="gender" value="Male" disabled><br><br>
-                    <label for="birthday">Birthday:</label>
-                    <input type="text" id="birthday" name="birthday" value="January 1, 2010" disabled><br><br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="example@example.com" disabled><br><br>
-                    <label for="bloodgroup">Blood Group:</label>
-                    <input type="text" id="bloodgroup" name="bloodgroup" value="B+" disabled><br><br>
+                    <label class="h6"  for="name">Name:  </label>
+                    <h6></h6><br>
+                    <label class="h6" for="phone">Phone Number:</label>
+                    <h6></h6><br>
+                    <label class="h6"  for="gender">Gender:</label>
+                    <h6></h6><br>
+                    <label class="h6" for="birthday">Birthday:</label>
+                    <h6></h6><br>
+                    <label class="h6" for="email">Email:</label>
+                    <h6></h6><br>
+                    <label class="h6" for="bloodgroup">Blood Group:</label>
+                    <h6></h6><br>
                     <h4>Vaccination Details</h4>
                     <table>
                       <tr>
@@ -132,7 +143,7 @@
                       <tr>
                         <td>COVID-19 Vaccine</td>
                         <td>2024-01-01</td>
-                        <td>1:30 pm</td>
+                        <td></td>
                       </tr>
                     </table>
                   </form>
@@ -150,7 +161,7 @@
   <footer id="footer">
     <div class="container">
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        /a>
       </div>
     </div>
   </footer><!-- End Footer -->
