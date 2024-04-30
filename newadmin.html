@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/favicon.pngA" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -87,9 +87,7 @@
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Report</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Eye Care</a>
-                    </li>
+                   
                   </ul>
                 </div>
                 <div class="col-lg-9">
@@ -97,36 +95,48 @@
                     <div class="tab-pane active show" id="tab-1">
                       <div class="row gy-4">
                         <div class="col-lg-8 details order-2 order-lg-1">
-                          <h3>Child Details</h3>
-                          <ul id="child-list">
-                            <li><a href="#" onclick="showChildDetails('John Doe')">John Doe</a></li>
-                            <li><a href="#" onclick="showChildDetails('Jane Doe')">Jane Doe</a></li>
-                            <!-- Add more child names as needed -->
-                          </ul>
+                          <div class="col-lg-9">
+                            <div class="tab-content">
+                                <div class="tab-pane active show" id="tab-1">
+                                    <div class="row gy-4">
+                                        <div class="col-lg-8 details order-2 order-lg-1">
+                                            <h3>Child Details</h3>
+                                            <ul id="child-list">
+                                                <li><a href="child.html?name=John%20Doe">John Doe</a></li>
+                                                <li><a href="child.html?name=Jane%20Doe">Jane Doe</a></li>
+                                                <!-- Add more child names as needed -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                              function showChildDetails(name) {
+                                  localStorage.setItem('selectedChild', name);
+                                  window.open('child-details.html', '_blank');
+                              }
+                          </script>
+                        </div>
+                        
                           <div id="child-details"></div>
                         </div>
                       </div>
                     </div>
                     <div class="tab-pane" id="tab-2">
                       <div class="row gy-4">
-                        <div class="col-lg-8 details order-2 order-lg-1">
-                          <h3>Add Vaccine</h3>
-                          <form>
-                            <div class="mb-3">
-                                <label for="vaccineName" class="form-label">Name of Vaccine</label>
-                                <select class="form-select" id="vaccineName" name="vaccineName">
-                                    <option selected>Select a vaccine</option>
-                                    <option value="vaccine1">Vaccine 1</option>
-                                    <option value="vaccine2">Vaccine 2</option>
-                                    <option value="vaccine3">Vaccine 3</option>
-                                    <!-- Add more options for different vaccines -->
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
-                        </div>
+                          <div class="col-lg-8 details order-2 order-lg-1">
+                              <h3>Add Vaccine</h3>
+                              <form>
+                                  <div class="mb-3">
+                                      <label for="vaccineName" class="form-label">Name of Vaccine</label>
+                                      <input type="text" class="form-control" id="vaccineName" name="vaccineName" placeholder="Enter vaccine name">
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                          </div>
                       </div>
-                    </div>
+                  </div>
+                  
                     <div class="tab-pane" id="tab-3">
                       
                       <!-- ======= Admin View - Child Details ======= -->
@@ -134,12 +144,21 @@
   <div class="container">
       <div class="row">
           <div class="col-lg-6">
-              <h2>Children List</h2>
-              <ul id="children-list">
-                  <li><a href="#" onclick="showVaccineDetails(1)">John Doe</a></li>
-                  <li><a href="#" onclick="showVaccineDetails(2)">Jane Smith</a></li>
-                  <!-- Add more child names as needed -->
-              </ul>
+            <section class="admin-view">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <h2>Children List</h2>
+                          <ul id="children-list">
+                              <li><a href="vaccine-details.html?id=1">John Doe</a></li>
+                              <li><a href="vaccine-details.html?id=2">Jane Smith</a></li>
+                              <!-- Add more child names as needed -->
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          
           </div>
           <div class="col-lg-6">
               <div id="vaccine-details">
