@@ -29,13 +29,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Medilab
-  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-  * Updated: Mar 17 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
   <style>
     /* Custom styles for the sign-up form */
     .signup-form-container {
@@ -89,31 +82,7 @@
       color: red;
     }
     
-    <style>
-        .notification-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .notification-item {
-            background-color: #f5f5f5;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-
-        .notification-item.accepted {
-            background-color: #d4edda; /* Bootstrap's success color */
-        }
-
-        .notification-item.rejected {
-            background-color: #f8d7da; /* Bootstrap's danger color */
-        }
-
-        .notification-item:hover {
-            background-color: #e0e0e0;
-        }
-    </style>
+    
     
 </style>
 
@@ -238,29 +207,38 @@
                     </div>
                   </div>
                   <div class="tab-pane" id="tab-3">
-                    <div class="row gy-4">
-                      <div class="col-lg-8 details order-2 order-lg-1">
-                        <h3>Notification</h3>
 
-                        <div class="container">
-                          <ul class="notification-list">
-                              <!-- Accepted Notification Item -->
-                              <li class="notification-item accepted">
-                                  <strong>Appointment Accepted</strong><br>
-                                  Your appointment for <strong>9.00 AM - 10.00 AM</strong> has been accepted.
-                              </li>
-                              <!-- Rejected Notification Item -->
-                              <li class="notification-item rejected">
-                                  <strong>Appointment Rejected</strong><br>
-                                  Your appointment for <strong>10.15 AM - 11.15 AM</strong> has been rejected.
-                              </li>
-                              <!-- Add more notification items here -->
-                          </ul>
+
+                    <div class="tab-pane active show" id="tab-1">
+                      <div class="row gy-4">
+                        <div class="col-lg-8 details order-2 order-lg-1">
+                          <div class="col-lg-9">
+                            <div class="tab-content">
+                                <div class="tab-pane active show" id="tab-1">
+                                    <div class="row gy-4">
+                                        <div class="col-lg-8 details order-2 order-lg-1">
+                                            <h3>Notification</h3>
+                                            <ul id="child-list">
+                                                <li><a href="notification.html?name=john%20Doe">John Doe</a></li>
+                                                <li><a href="notification.html?name=Jane%20Doe">Jane Doe</a></li>
+                                                <!-- Add more child names as needed -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                              function showChildDetails(name) {
+                                  localStorage.setItem('selectedChild', name);
+                                  window.open('child-details.html', '_blank');
+                              }
+                          </script>
+                        </div>
+                        
+                          <div id="child-details"></div>
+                        </div>
                       </div>
-
-
-                        </div>
-                        </div>
+                    </div>
                     <!-- Notification tab content -->
                   </div>
                 </div>
