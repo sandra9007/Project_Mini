@@ -90,20 +90,11 @@
          <script>
             // Function to handle date selection and redirection
             function handleDateSelection(vaccineName, tableIndex, rowIndex) {
-              const datePickerId = `datePicker_${tableIndex}_${rowIndex}`;
-              const dateInput = document.getElementById(datePickerId).querySelector('input[type="date"]');
-              
-              // Show date picker
-              document.getElementById(datePickerId).style.display = 'block';
-  
-              // Listen for date selection
-              dateInput.addEventListener('change', function() {
-                const selectedDate = this.value;
-                // Redirect to aa.html with selected date as a query parameter
-                window.location.href = `time.html?date=${selectedDate}&vaccine=${vaccineName}`;
-              });
+                // Redirect to aa.html with vaccine name as a query parameter
+                window.location.href = `time.html?vaccine=${vaccineName}`;
             }
-          </script>
+        </script>
+        
 
         <table class="table">
             <thead>
