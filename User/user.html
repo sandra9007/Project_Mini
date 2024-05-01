@@ -26,12 +26,10 @@
     <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
     <link
       href="../assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link
       href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
     <link
       href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
@@ -111,14 +109,11 @@
               <a class="nav-link scrollto" href="index.html#about">About</a>
             </li>
             <li>
-              <a class="nav-link scrollto" href="index.html#services"
-                >Vaccination Schedule</a
-              >
+              <a class="nav-link scrollto" href="index.html#services">Vaccination Schedule</a>
             </li>
             <li>
               <a class="nav-link scrollto" href="diseases.html"
-                >Vaccination Preventable Diseases</a
-              >
+                >Vaccination Preventable Diseases</a>
             </li>
 
             <li>
@@ -159,18 +154,15 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#tab-2"
-                        >Vaccine</a
-                      >
+                        >Vaccine</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#tab-3"
-                        >Notification</a
-                      >
+                        >Notification</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-bs-toggle="tab" href="#tab-3"
-                        >View Child</a
-                      >
+                        >View Child</a>
                     </li>
                   </ul>
                 </div>
@@ -330,6 +322,7 @@
                         </div>
                       </div>
                     </div>
+                    
                     <div class="tab-pane" id="tab-3">
                       <div class="tab-pane active show" id="tab-1">
                         <div class="row gy-4">
@@ -338,22 +331,24 @@
                               <div class="tab-content">
                                 <div class="tab-pane active show" id="tab-1">
                                   <div class="row gy-4">
-                                    <div
-                                      class="col-lg-8 details order-2 order-lg-1"
-                                    >
-                                      <h3>Notification</h3>
-                                      <ul id="child-list"></ul>
-                                    </div>
+                                    <div class="col-lg-8 details order-2 order-lg-1">
+                                      <h3>Child Details</h3>
+                                      <ul id="child-list">
+                                          <li><a href="child.html?name=John%20Doe">John Doe</a></li>
+                                          <li><a href="child.html?name=Jane%20Doe">Jane Doe</a></li>
+                                          
+                                      </ul>
                                   </div>
-                                </div>
                               </div>
-                              <script>
-                                function showChildDetails(name) {
-                                  localStorage.setItem("selectedChild", name);
-                                  window.open("child-details.html", "_blank");
-                                }
-                              </script>
-                            </div>
+                          </div>
+                      </div>
+                      <script>
+                        function showChildDetails(name) {
+                            localStorage.setItem('selectedChild', name);
+                            window.open('child-details.html', '_blank');
+                        }
+                    </script>
+                  </div>
 
                             <div id="child-details"></div>
                           </div>
