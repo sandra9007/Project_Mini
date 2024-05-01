@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Kiddo Shield</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Add custom CSS for the update button */
+    #updateButton {
+      background-color: blue; /* Blue background color */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    #updateButton:hover {
+      background-color: navy; /* Darker blue on hover */
+    }
+
+    #updateButton:active {
+      background-color: red; /* Red color when button is clicked */
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <h1 class="logo me-auto"><a href="index.html">Kiddo Shield</a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="newadmin.html">back</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="breadcrumbs">
+      <div class="container">
+        <!-- Breadcrumbs content goes here -->
+      </div>
+    </section>
+    <section class="inner-page">
+      <div class="container">
+        <div class="col-lg-9">
+            <div class="tab-content">
+                <div class="tab-pane active show" id="tab-1">
+                    <div class="row gy-4">
+                        <div class="col-lg-8 details order-2 order-lg-1">
+                            <h3>Child Details</h3>
+                            <div id="child-details"></div>
+                            <button id="updateButton" onclick="updateChildDetails()">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var selectedChild = localStorage.getItem('selectedChild');
+                var childDetails = getChildDetails(selectedChild);
+                displayChildDetails(childDetails);
+            });
+        
+            function getChildDetails(name) {
+                return {
+                    name: name,
+                    phoneNumber: '123-456-7890',
+                    gender: 'Male',
+                    birthday: 'January 1, 2010',
+                    dateOfBirth: '2010-01-01',
+                    email: 'example@example.com',
+                    bloodgroup:'b +',
+                    vaccine: {
+                        name: 'Vaccine Name',
+                        date: '2024-01-01',
+                        time: '1:30 pm'
+                    }
+                };
+            }
+        
+            function displayChildDetails(details) {
+                var childDetailsElement = document.getElementById('child-details');
+                childDetailsElement.innerHTML = `
+                    <p><strong>Name:</strong> ${details.name}</p>
+                    <p><strong>Phone Number:</strong> ${details.phoneNumber}</p>
+                    <p><strong>Gender:</strong> ${details.gender}</p>
+                    <p><strong>Birthday:</strong> ${details.birthday}</p>
+                    <p><strong>Date of Birth:</strong> ${details.dateOfBirth}</p>
+                    <p><strong>Email:</strong> ${details.email}</p>
+                    <p><strong> Blood Group:</strong> ${details.bloodgroup}</p>
+                    <p><strong>Vaccine Name:</strong> ${details.vaccine.name}</p>
+                    <p><strong>Vaccine Date:</strong> ${details.vaccine.date}</p>
+                    <p><strong>Vaccine Time:</strong> ${details.vaccine.time}</p>
+                `;
+            }
+
+            function updateChildDetails() {
+                // Your update logic here
+                // For example, you can prompt the user for new details and update the display
+            }
+        </script>
+      </div>
+    </section>
+  </main>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
