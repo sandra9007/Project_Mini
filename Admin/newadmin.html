@@ -195,7 +195,22 @@
                     
                     </div>
                     <div class="tab-pane" id="tab-4">
-                      <!-- Pediatrics tab content -->
+                      <ul id="child-list">
+                        <li><a href="report.html?name=John%20Doe">John Doe</a></li>
+                        <li><a href="report.html">Jane Doe</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      function showChildDetails(name) {
+          localStorage.setItem('selectedChild', name);
+          window.open('child-details.html', '_blank');
+      }
+  </script>
+</div>
                     </div>
                     <div class="tab-pane" id="tab-5">
                       <!-- Eye Care tab content -->
