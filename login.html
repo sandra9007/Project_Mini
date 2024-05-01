@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Kiddo Sheild</title>
+  <title>Inner Page - Medilab Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,17 +27,14 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  
   <style>
-    /* Custom styles for the sign-up form */
     .signup-form-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+      min-height: 100vh; 
     }
 
     .signup-form {
@@ -88,14 +85,10 @@
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">Kiddo Shield</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -107,62 +100,65 @@
           <li><a class="nav-link scrollto" href="index.html #contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
       <a href="signin.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Sign</span> In</a>
       <a href="login.html" class="appointment-btn scrollto"><span class="d-none d-md-inline">Sign</span> Up</a>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
 
-<br><br><br><br><br><br><br>
-    <section class="inner-page">
-      <div class="container">
-        <div class="signup-form-container">
-          <form class="signup-form" action="index.html" method="POST" onsubmit="return validatePassword()">
-            <h2>Create your account</h2>
-            <label for="firstname">Frist name:</label><br>
-            <input type="text" id="username" name="username" required><br>
-            <label for="Last Name">Last name:</label><br>
-            <input type="text" id="Last Name" name="Last Name" required><br>
-            <label for="phoneno">Phone Number</label><br>
-            <input type="text" id="phoneno" name="phoneno" required><br>
-            
-            <label for="gender">Gender:</label><br>
-            <select id="gender" name="gender" required>
-              <option value="">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select><br>
-            <label for="birthdate">Birth Date:</label><br>
-            <input type="date" id="birthdate" name="birthdate" required><br>
-            <label for="country">Country:</label><br>
-            <input type="text" id="country" name="country" required><br>
-            <label for="state">State:</label><br>
-            <input type="text" id="state" name="state" required><br>
-            <label for="district">District:</label><br>
-            <input type="text" id="district" name="district" required><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br>
-            <span id="password-error" class="error-message"></span><br>
-            <label for="confirm_password">Confirm Password:</label><br>
-            <input type="password" id="confirm_password" name="confirm_password" required><br>
-            <input type="submit" value="Register">
-            <br><br>
-            <a class="forgotten" href="forgot your password?.html">
-              Already have an account?</a><a href="signin.html">Sign in now</a>
+<br><br><br><br><br>
+<section class="inner-page">
+  <div class="container">
+      <div class="signup-form-container">
+          <form class="signup-form" id="registrationForm">
+              <h2>Create your account</h2>
+              <label for="firstname">First name:</label><br>
+              <input type="text" id="firstName" name="firstName" required><br>
+              <label for="lastName">Last name:</label><br>
+              <input type="text" id="lastName" name="lastName" required><br>
+              <label for="phoneNumber">Phone Number</label><br>
+              <input type="text" id="phoneNumber" name="phoneNumber" required><br>
+
+              <label for="gender">Gender:</label><br>
+              <select id="gender" name="gender" required>
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+              </select><br>
+              <label for="birthdate">Birth Date:</label><br>
+              <input type="date" id="birthdate" name="birthdate" required><br>
+              <label for="country">Country:</label><br>
+              <input type="text" id="country" name="country" required><br>
+              <label for="state">State:</label><br>
+              <input type="text" id="state" name="state" required><br>
+              <label for="district">District:</label><br>
+              <input type="text" id="district" name="district" required><br>
+              <label for="email">Email:</label><br>
+              <input type="email" id="email" name="email" required><br>
+              <label for="password">Password:</label><br>
+              <input type="password" id="password" name="password" required><br>
+              <label for="confirm_password">Confirm Password:</label><br>
+              <input type="password" id="confirm_password" name="confirm_password" required><br>
+              <span id="password-error" class="error-message"></span><br>
+              <input type="submit" value="Register">
+              <br><br>
+              <p>Already have an account? <a href="signin.html">Sign in now</a></p>
           </form>
-        </div>
       </div>
-    </section>
+  </div>
+</section>
 
-  </main><!-- End #main -->
 
- 
+  </main>
+
+  <footer id="footer">
+   
+  </footer>
+
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -233,6 +229,43 @@
       return true;
     }
   </script>
+ <script>
+  document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const formData = {
+          firstName: document.getElementById('firstName').value,
+          lastName: document.getElementById('lastName').value,
+          phoneNumber: document.getElementById('phoneNumber').value,
+          gender: document.getElementById('gender').value,
+          birthdate: document.getElementById('birthdate').value,
+          country: document.getElementById('country').value,
+          state: document.getElementById('state').value,
+          district: document.getElementById('district').value,
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value,
+          confirm_password: document.getElementById('confirm_password').value
+      };
+
+      const responseData = await fetch('http://localhost:3000/user/register', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+      }).then(response => response.json());
+
+      if (responseData._id) {
+          // Registration successful
+          window.location.href = 'signin.html'; // Redirect to sign-in page
+      } else {
+          // Registration failed
+          document.getElementById('password-error').innerText = responseData.message; // Display error message
+      }
+  });
+</script>
+
+
 </body>
 
 </html>
